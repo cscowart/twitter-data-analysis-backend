@@ -1,6 +1,7 @@
 appnope==0.1.0
 asgiref==3.2.7
 backcall==0.1.0
+boto==2.49.0
 botometer==1.4
 certifi==2019.11.28
 chardet==3.0.4

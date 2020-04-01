@@ -4,17 +4,17 @@ import re
 from textblob import TextBlob
 import tweepy
 # from IPython import embed
-
+from boto.s3.connection import S3Connection
+import os
 
 
 class AuthinticatedAPI:
     def __init__(self):
-        twitter_consumer_key = '8cp55Fz3tYR9tkpysoqoM4kHj'
-        twitter_consumer_secret_key = '8YpsgrOuh7a1loxBxKFjfH9U7d6N99AuZEwknsW8fMs41Oihq2'
-        twitter_access_token = '1110961758552932356-r9BIaHGyGAQ5gQg9yTmo5TXyOCzztF'
-        twitter_access_token_secret = '4pdo0GfkXwxLhCie1XAg1rPpZ5BjG2xXhkTRoowdA545X'
-        rapid_api_key = '505c1bb7c1msha23cb4b2caf1a87p13cb6bjsnf865da08e189'
-        # paralleldots_api_key = 'lpTwTaOoZFS1uGJzx350aPyrIdusGu2kYxHbw8UxAQw'
+        twitter_consumer_key = S3Connection(os.environ['twitter_consumer_key'])
+        twitter_consumer_secret_key = S3Connection(os.environ['twitter_consumer_secret_key'])
+        twitter_access_token = S3Connection(os.environ['twitter_access_token'])
+        twitter_access_token_secret = S3Connection(os.environ['twitter_access_token_secret'])
+        rapid_api_key = S3Connection(os.environ['rapid_api_key'])
         twitter_app_auth = {
             'consumer_key': twitter_consumer_key,
             'consumer_secret': twitter_consumer_secret_key,
@@ -24,8 +24,6 @@ class AuthinticatedAPI:
         self.bom = botometer.Botometer(wait_on_ratelimit=True,
                           rapidapi_key=rapid_api_key,
                           **twitter_app_auth)
-        # paralleldots.set_api_key(paralleldots_api_key)
-        self.language_code = 'en'
         auth = tweepy.AppAuthHandler(consumer_key=twitter_consumer_key, consumer_secret=twitter_consumer_secret_key)
         self.twitter_api = tweepy.API(auth, wait_on_rate_limit=True)
         self.num = 100
