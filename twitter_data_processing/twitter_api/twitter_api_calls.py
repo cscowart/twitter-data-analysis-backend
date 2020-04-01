@@ -138,14 +138,14 @@ class AuthinticatedAPI:
         word_counts = self.word_counts(filtered_text_data['text_array'])
         hashtag_counts = self.get_hashtags(status_array, search_term)
         sentiments = self.get_sentiment(filtered_text_data['text_array'])
-        bot_score = self.get_user_bot_score(self.handle)
+        # bot_score = self.get_user_bot_score(self.handle)
         return {
             'filtered_text_data':filtered_text_data, 
             'tweets_dates':tweets_dates, 
             'word_counts':word_counts, 
             'hashtag_counts':hashtag_counts,
             'sentiments':sentiments,
-            'bot_score':bot_score,
+            # 'bot_score':bot_score,
             }
 
     # STRETCH GOAL

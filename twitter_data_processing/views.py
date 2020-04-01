@@ -30,6 +30,14 @@ class HandleValidateView(APIView):
         user_data = api.get_user_data(handle)
         return Response(user_data)
 
+class BotScoreView(APIView):
+    """
+    Takes in a handle from the link and returns a user profile for validation
+    """
+    def get(self, request, handle, format=None):
+        api = AuthinticatedAPI()
+        user_data = api.get_user_bot_score(handle)
+        return Response(user_data)
 
 # class TopicView(APIView):
 #     """
