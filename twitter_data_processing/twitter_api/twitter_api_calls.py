@@ -4,17 +4,17 @@ import re
 from textblob import TextBlob
 import tweepy
 # from IPython import embed
-from boto.s3.connection import S3Connection
+# from boto.s3.connection import S3Connection
 import os
 
 
 class AuthinticatedAPI:
     def __init__(self):
-        twitter_consumer_key = S3Connection(os.environ['twitter_consumer_key'])
-        twitter_consumer_secret_key = S3Connection(os.environ['twitter_consumer_secret_key'])
-        twitter_access_token = S3Connection(os.environ['twitter_access_token'])
-        twitter_access_token_secret = S3Connection(os.environ['twitter_access_token_secret'])
-        rapid_api_key = S3Connection(os.environ['rapid_api_key'])
+        twitter_consumer_key = os.environ.get('twitter_consumer_key')
+        twitter_consumer_secret_key = os.environ.get('twitter_consumer_secret_key')
+        twitter_access_token = os.environ.get('twitter_access_token')
+        twitter_access_token_secret = os.environ.get('twitter_access_token_secret')
+        rapid_api_key = os.environ.get('rapid_api_key')
         twitter_app_auth = {
             'consumer_key': twitter_consumer_key,
             'consumer_secret': twitter_consumer_secret_key,
