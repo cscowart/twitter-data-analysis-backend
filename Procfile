@@ -1,1 +1,1 @@
-web:gunicorn twitter_data_analysis.wsgi
+web: gunicorn twitter_data_analysis.wsgi
