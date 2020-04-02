@@ -11,5 +11,5 @@ class GraphicList(generics.ListCreateAPIView):
     search_fields = ['title', 'author']
 
 class GraphicDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Graphic.objects.all().order_by('date_created')
+    queryset = Graphic.objects.all()
     serializer_class = GraphicSerializer

@@ -53,7 +53,7 @@ class AuthinticatedAPI:
         text_array = []
         status_array_filtered = []
         retweet_array = []
-        hashtag_array = []
+    
 
         for status in status_array:
             # checks if 100 tweets has been reached
