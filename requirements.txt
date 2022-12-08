@@ -3,7 +3,7 @@ asgiref==3.2.7
 backcall==0.1.0
 boto==2.49.0
 botometer==1.4
-certifi==2019.11.28
+certifi==2022.12.7
 chardet==3.0.4
 decorator==4.4.2
 dj-database-url==0.5.0
